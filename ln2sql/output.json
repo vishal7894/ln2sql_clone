@@ -1,0 +1,32 @@
+{
+	"select": {
+		"column": "None",
+		"type": "[]"
+	},
+	"from": {
+		"table": "all_star"
+	},
+	"join": {
+	},
+	"where": {
+		"conditions": [
+			{ "column": "gp",
+			  "type": "None",
+			  "operator": "=",
+			  "value": "'1'"
+			},
+			{
+			  "operator": "AND"
+			},
+			{ "column": "game_num",
+			  "type": "None",
+			  "operator": ">",
+			  "value": "OOV"
+			}
+		]
+	},
+	"group_by": {
+	},
+	"select": {
+	},
+}

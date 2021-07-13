@@ -1,0 +1,75 @@
+###########      City.sql     ############
+
+select all rows where score greater than 3 --> parsingException.ParsingException: No table name found in sentence!
+
+select all rows where score greater than 3 from emp --> SELECT emp.score FROM emp;
+
+select all rows where score > 3 from emp --> SELECT emp.score FROM emp;
+
+What is the average score? --> parsingException.ParsingException: No table name found in sentence!
+
+What is the average score of in emp table? --> SELECT AVG(emp.score) FROM emp;
+
+What is the average score of in emp? --> SELECT AVG(emp.score) FROM emp;
+
+
+##########         School.sql        ############
+
+Which student has age greater than 10? --> SELECT * FROM student WHERE student.age > '10';
+
+Which students has age greater than 10? --> parsingException.ParsingException: No table name found in sentence!
+
+Show all student has age greater than 10? --> SELECT * FROM student WHERE student.age > '10';
+
+Show all students has age greater than 10? --> parsingException.ParsingException: No table name found in sentence!
+--------------------
+Show all rows where age greater than 10 --> parsingException.ParsingException: No table name found in sentence!
+
+Show all students where age greater than 10 --> parsingException.ParsingException: No table name found in sentence!
+
+Show all student where age greater than 10 --> SELECT * FROM student WHERE student.age > '10';
+--------------------
+
+##########       Baseball (schema.sql)      #############
+-------------------------
+Show all rows where year less than 1950 and league_id equal to 1 --> parsingException.ParsingException: No table name found in sentence!
+
+Show all all_star where year less than 1950 and league_id equal to 1 --> SELECT * FROM all_star WHERE all_star.year < '1950' AND all_star.league_id = '1';
+
+Show all all_star where year less than 1950 and league id equal to 1 --> SELECT * FROM all_star WHERE all_star.year < '1';
+
+select all all_star where year less than 1950 and league_id equal to 1 --> SELECT * FROM all_star WHERE all_star.year < '1950' AND all_star.league_id = '1';
+
+select all all_star where team_id is AL --> SELECT * FROM all_star WHERE all_star.team_id = 'al';
+
+select all_star where team_id equal to 'AL' --> SELECT * FROM all_star WHERE all_star.team_id = 'al';
+
+show all all_star where team id is AL --> SELECT * FROM all_star;
+
+select all all_star where team id is AL --> SELECT * FROM all_star;
+
+show all_star where game_id has 'ALS' --> SELECT * FROM all_star WHERE all_star.game_id = OOV;
+
+select all_star where game_id is having 'ALS' --> SELECT * FROM all_star WHERE all_star.game_id = 'having';
+
+select all_star where game_id is having ALS --> SELECT * FROM all_star WHERE all_star.game_id = 'having';
+
+select all all_star where team_id is not AL --> SELECT * FROM all_star WHERE all_star.team_id != 'al';
+
+select all_star where team_id is not AL --> SELECT * FROM all_star WHERE all_star.team_id != 'al';
+
+select all_star where team_id is AL and team_id is not NL --> SELECT * FROM all_star WHERE all_star.team_id = 'al' AND all_star.team_id != 'nl';
+-------------------------
+
+
+select all from table where team_id = 'AL' --> parsingException.ParsingException: No table name found in sentence!
+
+select all where team_id is AL from all_star --> SELECT all_star.team_id FROM all_star;
+
+
+select team_id, league_id, year from all_star where team_id = 'AL' --> SELECT all_star.team_id, all_star.league_id, all_star.year FROM all_star WHERE all_star.team_id = 'al';
+
+show sum of gp and sum of game_num from all_star -->
+SELECT SUM(all_star.gp), SUM(all_star.game_num)
+FROM all_star;
+
